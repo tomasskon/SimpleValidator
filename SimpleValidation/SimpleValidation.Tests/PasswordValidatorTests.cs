@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
 using NUnit.Framework;
 using SimpleValidation.Interfaces;
-using SimpleValidation.Models;
 
 namespace SimpleValidation.Tests
 {
@@ -11,19 +8,6 @@ namespace SimpleValidation.Tests
     {
         private IPasswordValidator _passwordValidator;
         
-        //configuration to be used when implementing Validators and for unit tests
-        private readonly SimpleValidationConfiguration _configuration = new SimpleValidationConfiguration
-        {
-            PasswordConfiguration = new Password
-            {
-                Length = 7,
-                SpecialSymbols = new List<char>
-                {
-                    '!', '@', '#', '$', '5'
-                }
-            }
-        };
-
         [SetUp]
         public void Setup()
         {

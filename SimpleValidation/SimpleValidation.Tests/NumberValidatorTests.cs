@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 using SimpleValidation.Interfaces;
-using SimpleValidation.Models;
 
 namespace SimpleValidation.Tests
 {
@@ -9,18 +8,6 @@ namespace SimpleValidation.Tests
     public class NumberValidatorTests
     {
         private INumberValidator _numberValidator;
-        
-        //configuration to be used when implementing Validators and for unit tests
-        private readonly SimpleValidationConfiguration _configuration = new SimpleValidationConfiguration
-        {
-            NumberConfiguration = new Number
-            {
-                CountryCodeRules = new Dictionary<string, int>
-                {
-                    {"+220", 7}, {"+202", 8}
-                }
-            }
-        };
         
         [SetUp]
         public void Setup()

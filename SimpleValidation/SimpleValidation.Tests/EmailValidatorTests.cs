@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SimpleValidation.Interfaces;
 
 namespace SimpleValidation.Tests
