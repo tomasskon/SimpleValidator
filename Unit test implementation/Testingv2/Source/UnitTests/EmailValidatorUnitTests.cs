@@ -97,6 +97,13 @@ namespace ValidatorsUnitTests
         //     var isValid = EmailValidator.IsEmailValid("lisauskas.&^!#4)(_+#!rytis@gmail.com");
         //     Assert.AreEqual(false, isValid, "Not a valid email, forbidden characters");
         // }
+        
+        [TestMethod]
+        public void Email_has_valid_characters()
+        {
+            var isValid = EmailValidator.IsEmailValid("lisauskas.&^!#4)(_+#!rytis@gmail.com");
+            Assert.AreEqual(false, isValid, "Valid email");
+        }
 
         [TestMethod]
         public void Email_has_at_sign_at_the_wrong_place_not_valid()
