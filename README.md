@@ -16,3 +16,7 @@ Also to each unit test I added SetUp method (to configure validators configurati
 ### Update
 
 I will create a pull request to my classmates Repo once he enables my permission to push some changes into his repository. 
+
+### Update 2
+
+The pull request is made to my classmates repository
