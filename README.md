@@ -11,3 +11,12 @@
 Some unit tests that were given by my classmate were incorrect, for instance the phone numbers is valid, bet the unit test asserts that it will be invalid. For those unit tests I commented them out and added my own. A pull request will be created to my classmates repository with the changes. 
 
 Also to each unit test I added SetUp method (to configure validators configurations), because my implementation requires the setup to be done before usage of the validators. **The logic of unit tests was not changed.**. 
+
+
+### Update
+
+I will create a pull request to my classmates Repo once he enables my permission to push some changes into his repository. 
+
+### Update 2
+
+The pull request is made to my classmates repository
