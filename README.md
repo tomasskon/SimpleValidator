@@ -1,10 +1,14 @@
 ### Project structure
 
 1. **SimpleValidation** - unit tests that have been created by me. (Tomas Kondrotas)
+
 2. **Unit test implementation** - implementation of validators given other students unit tests
-3. **UnitTests** - unit tests given by my classmate.
-4. **Additional unit tests** - unit tests that were added by me.
-5. **Validators** - implementation of validators.
+2.1. **UnitTests** - unit tests given by my classmate.
+2.2. **Additional unit tests** - unit tests that were added by me.
+2.3. **Validators** - implementation of validators.
+
+3. **Library implementation** - users managment web application (using Nerijus Pūras nugget library to validate user data)
+Classmates validators were implemented in **LibraryImplementation.Service** **UserValidationService.cs** class. 
  
 ### Some additional notes
 
