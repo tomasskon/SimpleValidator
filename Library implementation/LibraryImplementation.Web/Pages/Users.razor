@@ -1,0 +1,58 @@
+﻿@page "/Users"
+
+@using LibraryImplementation.Web.HttpClients.Interfaces
+@using LibraryImplementation.Web.ViewModels.User
+
+@inject IUserHttpClient _userHttpClient;
+@inject NavigationManager _navigationManager;
+
+<h3>Users</h3>
+
+<div class="mt-2 mb-3">
+    <button class="btn btn-primary" @onclick="@(() => _navigationManager.NavigateTo("Users/Create"))">Create</button>
+</div>
+
+@if (_users != null)
+{
+    <div class="border rounded" style="cursor: pointer">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Address </th>
+                <th scope="col">Email </th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var user in _users)
+            {
+                <tr @onclick="@(() => NavigateToUser(user.Id))">
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.Surname</td>
+                    <td>@user.PhoneNumber</td>
+                    <td>@user.Address</td>
+                    <td>@user.Email</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    private IList<UserViewModel> _users;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        _users = await _userHttpClient.GetAll();
+    }
+
+    private void NavigateToUser(Guid userId)
+    {
+        _navigationManager.NavigateTo($"Users/{userId}");
+    }
+}

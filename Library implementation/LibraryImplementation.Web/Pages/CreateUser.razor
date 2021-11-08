@@ -1,0 +1,71 @@
+﻿@page "/Users/Create"
+
+@using LibraryImplementation.Web.HttpClients.Interfaces
+@using LibraryImplementation.Web.ViewModels
+@using Microsoft.AspNetCore.Components
+@using LibraryImplementation.Web.ViewModels.User
+
+@inject IUserHttpClient _userHttpClient;
+@inject NavigationManager _navigationManager;
+
+<EditForm Model="@_user" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary/>
+        
+    <div class="form-group">
+        <label>Name</label>
+        <InputText id="name" class="form-control" @bind-Value="@_user.Name"/>
+    </div>
+    <div class="form-group">
+        <label>Surname</label>
+        <InputText id="surname" class="form-control" @bind-Value="@_user.Surname"/>
+    </div>
+    <div class="form-group">
+        <label>PhoneNumber</label>
+        <InputText id="phoneNumber" class="form-control" @bind-Value="@_user.PhoneNumber"/>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <InputText id="address" class="form-control" @bind-Value="@_user.Address"/>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <InputText id="email" class="form-control" @bind-Value="@_user.Email"/>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <InputText id="password" class="form-control" @bind-Value="@_user.Password"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</EditForm>
+@if (_error)
+{
+    <div class="alert alert-danger mt-3" role="alert">
+        @_response.Item2.Message
+    </div>
+}
+
+@code {
+    private CreateUserViewModel _user = new CreateUserViewModel();
+    private bool _error;
+    private Tuple<Guid, StandardErrorResponse> _response;
+    
+    private async Task HandleValidSubmit()
+    {
+        _response = await _userHttpClient.Create(_user);
+        HandleActionCases();
+    }
+    
+    private void HandleActionCases()
+    {
+        if (_response.Item2 == null)
+        {
+            _navigationManager.NavigateTo($"Users/{_response.Item1}");
+        }
+        else
+        {
+            _error = true;
+        }
+    }
+}
