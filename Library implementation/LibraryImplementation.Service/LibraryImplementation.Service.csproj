@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Biblioteka\Biblioteka\Biblioteka.csproj" />
+      <ProjectReference Include="..\LibraryImplementation.Domain\LibraryImplementation.Domain.csproj" />
+      <ProjectReference Include="..\LibraryImplementation.Repository\LibraryImplementation.Repository.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Biblioteka" Version="1.0.0" />
+    </ItemGroup>
+
+</Project>
