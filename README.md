@@ -8,7 +8,7 @@
 <br/> 2.3. **Validators** - implementation of validators.
 
 3. **Library implementation** - users managment web application (using Nerijus Pūras nugget library to validate user data)
-Classmates validators were implemented in **LibraryImplementation.Service** **UserValidationService.cs** class. 
+Classmates validators were implemented in **LibraryImplementation.Service** -> **UserValidationService.cs** class. 
  
 ### Some additional notes
 
